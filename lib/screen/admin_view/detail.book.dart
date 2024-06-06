@@ -177,7 +177,7 @@ class _DetailPageState extends State<DetailPage> {
           Container(
             padding: EdgeInsets.only(left: 30, right: 30),
             child: Image.network(
-                "http://192.168.137.1/perpustakaan/buku/uploads/${widget.book!.cover}"),
+                "${apiUrl.basicUrl}/perpustakaan/buku/uploads/${widget.book!.cover}"),
           ),
           SizedBox(
             height: 30,

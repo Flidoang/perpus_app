@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:perpustakaan/apuUrl.dart';
 import 'package:perpustakaan/core.dart';
 import 'package:text_area/text_area.dart';
 import 'package:http/http.dart' as http;
@@ -63,7 +64,7 @@ class _TambahPageState extends State<TambahPage> {
   }
 
   Future create(File? imageFile) async {
-    var url = Uri.parse('http://192.168.137.1/perpustakaan/buku/create.php');
+    var url = Uri.parse('${apiUrl.basicUrl}/create.php');
     var request = http.MultipartRequest("POST", url);
     request.fields['judul'] = title.text;
     request.fields['penulis'] = author.text;

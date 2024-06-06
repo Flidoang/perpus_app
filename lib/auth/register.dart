@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:perpustakaan/apuUrl.dart';
 import 'package:perpustakaan/auth/login.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
@@ -23,7 +24,7 @@ class _RegisterState extends State<Register> {
   final formKey = GlobalKey<FormState>();
 
   Future register() async {
-    var url = Uri.parse('http://192.168.137.1/perpustakaan/register.php');
+    var url = Uri.parse('${apiUrl1.basicUrl}/register.php');
     var response = await http.post(url as Uri, body: {
       "nama": nama.text,
       "username": user.text,

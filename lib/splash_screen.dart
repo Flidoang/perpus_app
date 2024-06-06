@@ -19,7 +19,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   }
 
   openSplashScreen() async {
-    //bisa diganti beberapa detik sesuai keinginan
+    //bisa diganti beberapa detik sesuai keinginana
     var durasiSplash = const Duration(seconds: 2);
 
     return Timer(durasiSplash, () {

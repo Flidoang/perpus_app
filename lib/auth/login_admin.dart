@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:perpustakaan/apuUrl.dart';
 import 'package:perpustakaan/auth/login.dart';
 import 'package:perpustakaan/screen/admin_view/book.dart';
 import 'package:http/http.dart' as http;
@@ -20,7 +21,7 @@ class _AdminPageState extends State<AdminPage> {
   TextEditingController pass = TextEditingController();
 
   Future login() async {
-    var url = Uri.parse('http://192.168.137.1/perpustakaan/login.php');
+    var url = Uri.parse('${apiUrl1.basicUrl}/login.php');
     var response = await http
         .post(url as Uri, body: {"username": user.text, "password": pass.text});
     var data = json.decode(response.body);
